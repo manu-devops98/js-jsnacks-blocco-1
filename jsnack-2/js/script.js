@@ -4,7 +4,7 @@ const list = ['MARIO', 'CHIARA', 'FRANCESCO', 'FILIPPO', 'LUCA', 'SARA', 'GIULIA
 
 let userName = prompt('Inserisci nome').toUpperCase();
 const container = document.querySelector('.container');
-let welcome = document.createElement('h1');
+let welcome = document.createElement('div');
 
 let find = false;
 for (let i = 0; i < list.length; i++) {
@@ -19,3 +19,24 @@ for (let i = 0; i < list.length; i++) {
     welcome = 'Non sei nella lista degli invitati';
   }
 container.append(welcome);
+
+// CICLO WHILE 
+let findWhile = false;
+let i = 0;
+let containerTwo = document.querySelector('.container-2')
+let result = document.createElement('div');
+while (i < list.length) {
+   if (userName.toUpperCase() == list[i]) {
+     findWhile = true;
+   }
+
+  i++;
+}
+
+if (findWhile) {
+  result = 'Benvenuto alla festa ' + userName;
+} else {
+  result = 'Non sei nella lista degli invitati';
+}
+
+containerTwo.append(result);
